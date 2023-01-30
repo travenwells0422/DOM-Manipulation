@@ -28,6 +28,34 @@ function submitOnclick(e) {
     const value = document.querySelector("input").value;
     const h2Element = document.createElement("h2");
     h2Element.innerText = value;
+    h2Element.style.color = "white";
+
+    const image = document.createElement("img");
+    image.src = "/images/IMG_3561.JPG";
+    image.style.width = "300px";
+    image.style.height = "300px";
+    image.style.objectFit = "container";
+    image.style.objectPosition = "top";
+    image.style.borderRadius = "4rem";
+
     section.append(h2Element);
+    section.append(image);
+
     e.preventDefault();
 }
+
+// Inline - Styling
+const body = document.querySelector("body");
+body.style.backgroundColor = "black";
+body.style.margin = "20px";
+
+header.style.backgroundColor = "green";
+header.style.height = "100px";
+header.style.borderStyle = "solid";
+header.style.borderWidth = "thick";
+header.style.borderRadius = "2rem";
+header.style.textAlign = "center";
+
+h1Element.style.paddingTop = "10px";
+
+main.style.marginTop = "40px";
