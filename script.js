@@ -2,14 +2,14 @@
 const header = document.createElement("header");
 document.body.appendChild(header);
 
-const h1Element = document.createElement("h1");
+let h1Element = document.createElement("h1");
 h1Element.innerText = "DOM Manipulation";
 header.append(h1Element);
 
-const main = document.createElement("main");
+let main = document.createElement("main");
 document.body.appendChild(main);
 
-const section = document.createElement("section");
+let section = document.createElement("section");
 main.append(section);
 
 const input = document.createElement("input");
@@ -19,5 +19,15 @@ input.placeholder = "name";
 
 const submitButton = document.createElement("button");
 submitButton.innerText = "submit";
-submitButton.type = "submit";
+submitButton.id = "submit";
 section.append(submitButton);
+
+// Function for submit button
+document.querySelector("#submit").addEventListener("click", submitOnclick);
+function submitOnclick(e) {
+    const value = document.querySelector("input").value;
+    const h2Element = document.createElement("h2");
+    h2Element.innerText = value;
+    section.append(h2Element);
+    e.preventDefault();
+}
